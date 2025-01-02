@@ -42,3 +42,29 @@ Thumbs.db
 .nx/workspace-data
 
 .angular
+
+# Node.js
+node_modules/
+npm-debug.log
+package-lock.json
+
+# Angular
+dist/
+out-tsc/
+coverage/
+*.js.map
+
+# Java
+*.class
+*.jar
+*.war
+*.ear
+*.log
+/build/
+.gradle/
+.idea/
+*.iml
+
+# OS generated files
+.DS_Store
+Thumbs.db

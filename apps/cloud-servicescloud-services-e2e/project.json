@@ -4,7 +4,10 @@
   "projectType": "application",
   "sourceRoot": "apps/cloud-servicescloud-services-e2e/src",
   "tags": [],
-  "implicitDependencies": ["cloud-servicescloud-services"],
+  "implicitDependencies": [
+    "frontend",
+    "backend"
+  ],
   "// targets": "to see all targets run: nx show project cloud-servicescloud-services-e2e --web",
   "targets": {}
 }
