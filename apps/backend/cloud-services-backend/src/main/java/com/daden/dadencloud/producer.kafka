@@ -1,0 +1,4 @@
+PRODUCER Keyed-message
+topic: test-topic
+key: key-1
+value: value-1

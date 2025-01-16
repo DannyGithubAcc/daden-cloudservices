@@ -1,0 +1,38 @@
+spring:
+  application:
+    name: dadenclouds
+  cloud:
+    function:
+      definition: producerBinding;functionBinding;consumerBinding
+    stream:
+      bindings:
+        producerBinding-out-0:
+          destination: input-topic
+        functionBinding-in-0:
+          destination: input-topic
+          group: function-group
+        functionBinding-out-0:
+          destination: processed-topic
+        consumerBinding-in-0:
+          destination: processed-topic
+          group: consumer-group
+      kafka:
+        streams:
+          binder:
+            configuration:
+              application.id: dadenclouds
+              default.key.serde: org.apache.kafka.common.serialization.Serdes$StringSerde
+              default.value.serde: org.apache.kafka.common.serialization.Serdes$StringSerde
+        binder:
+          brokers: localhost:9092
+          replication-factor: 1
+          auto-create-topics: true
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics
+  endpoint:
+    health:
+      show-details: always
